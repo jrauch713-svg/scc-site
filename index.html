@@ -13,12 +13,20 @@ body{margin:0}
 a{color:#3B6310}a:hover{color:#13233D}
 .mobile-cta{display:flex}
 @media (min-width: 768px){.mobile-cta{display:none}}
+::selection{background:#C8F169;color:#13233D}
+a{text-underline-offset:3px}
+:focus-visible{outline:3px solid #3B6310;outline-offset:3px;border-radius:4px}
+.dark :focus-visible{outline-color:#C8F169}
+.svc-grid{display:grid;gap:20px;grid-template-columns:minmax(0,1fr)}
+@media (min-width: 640px){.svc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width: 1024px){.svc-grid{grid-template-columns:repeat(6,minmax(0,1fr))}.svc-grid>*{grid-column:span 2}.svc-grid>.svc-wide{grid-column:span 3}}
+.svc-price{margin-top:auto !important;padding-top:6px}
 </style>
 </head>
 <body>
 <div style="font-family: 'Public Sans', system-ui, sans-serif; color: #13233D; background: #F6F7F1; min-height: 100vh">
 
-<header style="background: #13233D">
+<header class="dark" style="background: #13233D">
 <div style="max-width: 1200px; margin: 0 auto; padding: 18px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
 <a href="#top" aria-label="The Spring Cleaning Crew, home" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #FFFFFF">
 <svg width="44" height="44" viewBox="0 0 64 64" fill="none" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#C8F169"></rect><path d="M17 33h30l-2.5 18.5a2 2 0 0 1-2 1.5H21.5a2 2 0 0 1-2-1.5L17 33z" fill="#13233D"></path><path d="M17 33l-7-6.5M47 33l7-6.5" stroke="#13233D" stroke-width="4.5" stroke-linecap="round"></path><path d="M32 34V21" stroke="#13233D" stroke-width="4" stroke-linecap="round"></path><path d="M32 25c-7.5 0-11.5-4.5-11.5-11 7 0 11.5 4 11.5 11z" fill="#13233D"></path><path d="M32 21c6.5 0 10.5-4 10.5-10-6.5 0-10.5 3.5-10.5 10z" fill="#13233D"></path></svg>
@@ -34,12 +42,11 @@ a{color:#3B6310}a:hover{color:#13233D}
 </header>
 
 <main id="top">
-<section style="background: #13233D; color: #FFFFFF">
-<div style="max-width: 1200px; margin: 0 auto; padding: 72px 24px 96px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 56px; align-items: center">
+<section class="dark" style="background: #13233D; color: #FFFFFF">
+<div style="max-width: 1200px; margin: 0 auto; padding: 72px 24px 96px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 56px; align-items: end">
 <div style="display: flex; flex-direction: column; gap: 24px">
-<p style="margin: 0; font-weight: 700; color: #C8F169; letter-spacing: 0.08em; text-transform: uppercase; font-size: 14px">Anywhere in Houston</p>
-<h1 style="margin: 0; font-family: 'Big Shoulders', 'Arial Narrow', sans-serif; font-weight: 900; font-size: 84px; line-height: 0.92; letter-spacing: 0.005em; text-transform: uppercase">Got junk you want gone? <span style="color: #C8F169">We haul it away.</span></h1>
-<p style="margin: 0; font-size: 20px; line-height: 1.55; color: #D5DCE6; max-width: 36ch">Junk removal anywhere in Houston from a local owner: haul-aways, garage and attic clear-outs, and muscle-only help. Send a photo for a free estimate.</p>
+<h1 style="margin: 0; font-family: 'Big Shoulders', 'Arial Narrow', sans-serif; font-weight: 900; font-size: clamp(52px, 12vw, 84px); line-height: 0.92; letter-spacing: 0.005em; text-transform: uppercase; text-wrap: balance">Got junk you want gone? <span style="color: #C8F169">We haul it away.</span></h1>
+<p style="margin: 0; font-size: 20px; line-height: 1.55; color: #D5DCE6; max-width: 36ch">No job too small. One couch, a full garage or just a pair of strong arms, anywhere in Houston. Send a photo for a free estimate.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 12px; padding-top: 8px">
 <a href="#contact" style="display: inline-flex; align-items: center; min-height: 54px; padding: 0 24px; background: #C8F169; color: #13233D; font-weight: 700; text-decoration: none; border-radius: 10px; font-size: 17px">Send a photo for a free estimate</a>
 <a href="pricing.html" style="display: inline-flex; align-items: center; min-height: 54px; padding: 0 22px; color: #FFFFFF; font-weight: 600; text-decoration: none; border-radius: 10px; border: 2px solid #FFFFFF; font-size: 17px">See pricing</a>
@@ -48,8 +55,8 @@ a{color:#3B6310}a:hover{color:#13233D}
 <div style="background: #FFFFFF; color: #13233D; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; gap: 18px">
 <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px">
 <div style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Big Shoulders', 'Arial Narrow', sans-serif; font-weight: 900; font-size: 26px; text-transform: uppercase">Free</span><span style="font-size: 14px; color: #4E5B6E">estimates from a photo</span></div>
-<div style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Big Shoulders', 'Arial Narrow', sans-serif; font-weight: 900; font-size: 26px; text-transform: uppercase">Reuse</span><span style="font-size: 14px; color: #4E5B6E">before the landfill</span></div>
-<div style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Big Shoulders', 'Arial Narrow', sans-serif; font-weight: 900; font-size: 26px; text-transform: uppercase">Local</span><span style="font-size: 14px; color: #4E5B6E">owner does the work</span></div>
+<div style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Big Shoulders', 'Arial Narrow', sans-serif; font-weight: 900; font-size: 26px; text-transform: uppercase">Small</span><span style="font-size: 14px; color: #4E5B6E">and odd jobs welcome</span></div>
+<div style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Big Shoulders', 'Arial Narrow', sans-serif; font-weight: 900; font-size: 26px; text-transform: uppercase">Local</span><span style="font-size: 14px; color: #4E5B6E">and glad you called</span></div>
 </div>
 </div>
 </div>
@@ -61,31 +68,31 @@ a{color:#3B6310}a:hover{color:#13233D}
 <h2 style="margin: 0; font-family: 'Big Shoulders', 'Arial Narrow', sans-serif; font-weight: 900; font-size: 56px; line-height: 0.95; text-transform: uppercase">What we do</h2>
 <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #2D3A4F; max-width: 60ch">Send a photo for a free estimate. Once we see it in person, you get a firm quote before any work starts. No surprise fees. <a href="pricing.html">See full pricing</a>.</p>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px">
-<div style="background: #FFFFFF; border: 1px solid #D9DDE3; border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 10px">
+<div class="svc-grid">
+<div class="svc-wide" style="background: #FFFFFF; border: 1px solid #D9DDE3; border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 10px">
 <h3 style="margin: 0; font-family: 'Big Shoulders', 'Arial Narrow', sans-serif; font-weight: 800; font-size: 30px; line-height: 1; text-transform: uppercase">Junk haul-away</h3>
 <p style="margin: 0; line-height: 1.55; color: #2D3A4F">Single items, truckloads and cleanouts: garages, spare rooms, move-outs. We load it, haul it off, and reuse what we can. A deposit books your date.</p>
-<p style="margin: 0; font-weight: 700; color: #3B6310">From $99</p>
+<p class="svc-price" style="margin: 0; font-weight: 700; color: #3B6310">From $99</p>
 </div>
-<div style="background: #FFFFFF; border: 1px solid #D9DDE3; border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 10px">
+<div class="svc-wide" style="background: #FFFFFF; border: 1px solid #D9DDE3; border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 10px">
 <h3 style="margin: 0; font-family: 'Big Shoulders', 'Arial Narrow', sans-serif; font-weight: 800; font-size: 30px; line-height: 1; text-transform: uppercase">Garage and attic clear-outs</h3>
 <p style="margin: 0; line-height: 1.55; color: #2D3A4F">A garage, attic, shed or spare room you can’t walk into anymore? We sort it with you into keep, sell, donate and junk, then haul the junk away.</p>
-<p style="margin: 0; font-weight: 700; color: #3B6310">Priced by the load</p>
+<p class="svc-price" style="margin: 0; font-weight: 700; color: #3B6310">Priced by the load</p>
 </div>
 <div style="background: #FFFFFF; border: 1px solid #D9DDE3; border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 10px">
 <h3 style="margin: 0; font-family: 'Big Shoulders', 'Arial Narrow', sans-serif; font-weight: 800; font-size: 30px; line-height: 1; text-transform: uppercase">Muscle-only help</h3>
 <p style="margin: 0; line-height: 1.55; color: #2D3A4F">Loading trucks and dumpsters, moving furniture around the house, clearing out a room or garage. If it’s heavy, we’ll lift it.</p>
-<p style="margin: 0; font-weight: 700; color: #3B6310">$40 an hour, 2-hour minimum</p>
+<p class="svc-price" style="margin: 0; font-weight: 700; color: #3B6310">$40 an hour, 2-hour minimum</p>
 </div>
 <div style="background: #FFFFFF; border: 1px solid #D9DDE3; border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 10px">
 <h3 style="margin: 0; font-family: 'Big Shoulders', 'Arial Narrow', sans-serif; font-weight: 800; font-size: 30px; line-height: 1; text-transform: uppercase">We pick up free items</h3>
 <p style="margin: 0; line-height: 1.55; color: #2D3A4F">Listed something for free? We’ll come remove it, so you’re not stuck waiting on strangers who never show. Usable things get resold or rehomed, not dumped.</p>
-<p style="margin: 0; font-weight: 700; color: #3B6310">Send us the listing</p>
+<p class="svc-price" style="margin: 0; font-weight: 700; color: #3B6310">Send us the listing</p>
 </div>
 <div style="background: #FFFFFF; border: 1px solid #D9DDE3; border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 10px">
 <h3 style="margin: 0; font-family: 'Big Shoulders', 'Arial Narrow', sans-serif; font-weight: 800; font-size: 30px; line-height: 1; text-transform: uppercase">We sell it for you</h3>
 <p style="margin: 0; line-height: 1.55; color: #2D3A4F">Got things too good to toss but no time to sell them? We photograph, list and sell them for you, and you get a share of every sale.</p>
-<p style="margin: 0; font-weight: 700; color: #3B6310">You keep 50% of each sale</p>
+<p class="svc-price" style="margin: 0; font-weight: 700; color: #3B6310">You keep 50% of each sale</p>
 </div>
 </div>
 </div>
@@ -103,10 +110,10 @@ a{color:#3B6310}a:hover{color:#13233D}
 </div>
 </section>
 
-<section id="contact" style="background: #13233D; color: #FFFFFF">
+<section id="contact" class="dark" style="background: #13233D; color: #FFFFFF">
 <div style="max-width: 1200px; margin: 0 auto; padding: 88px 24px; display: flex; flex-direction: column; gap: 20px; align-items: flex-start">
 <h2 style="margin: 0; font-family: 'Big Shoulders', 'Arial Narrow', sans-serif; font-weight: 900; font-size: 56px; line-height: 0.95; text-transform: uppercase">Get a free estimate</h2>
-<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #D5DCE6; max-width: 52ch">Text or email a photo of what needs to go, your ZIP code, and which service you need. We’ll send a free estimate back.</p>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #D5DCE6; max-width: 52ch">Text or email a photo of what needs to go, your ZIP code, and which service you need. We’ll send a free estimate back. Thanks for giving a local business a shot.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 12px">
 <a href="sms:+18323567571" style="display: inline-flex; align-items: center; min-height: 54px; padding: 0 24px; background: #C8F169; color: #13233D; font-weight: 700; text-decoration: none; border-radius: 10px; font-size: 17px">Text (832) 356-7571</a>
 <a href="tel:+18323567571" style="display: inline-flex; align-items: center; min-height: 54px; padding: 0 22px; color: #FFFFFF; font-weight: 600; text-decoration: none; border-radius: 10px; border: 2px solid #FFFFFF; font-size: 17px">Call (832) 356-7571</a>
@@ -117,8 +124,8 @@ a{color:#3B6310}a:hover{color:#13233D}
 </section>
 </main>
 
-<div class="mobile-cta" style="position: sticky; bottom: 0; z-index: 5; padding: 12px 16px; background: #13233D; border-top: 1px solid #2A3B57">
-<a href="#contact" style="flex: 1; display: inline-flex; align-items: center; justify-content: center; min-height: 54px; background: #C8F169; color: #13233D; font-weight: 700; text-decoration: none; border-radius: 10px; font-size: 17px">Get a free estimate</a>
+<div class="mobile-cta dark" style="position: sticky; bottom: 0; z-index: 5; padding: 12px 16px; background: #13233D; border-top: 1px solid #2A3B57">
+<a href="sms:+18323567571" style="flex: 1; display: inline-flex; align-items: center; justify-content: center; min-height: 54px; background: #C8F169; color: #13233D; font-weight: 700; text-decoration: none; border-radius: 10px; font-size: 17px">Text a photo for a free estimate</a>
 </div>
 
 <footer style="background: #0C1729">
