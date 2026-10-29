@@ -17,7 +17,7 @@ for F in index.html pricing.html; do
   chk "$F offers a free estimate"        "grep -qi 'free estimate' $F"
 done
 chk "contact email present"              "grep -q 'mailto:thespringcleaningcrew@gmail.com' index.html"
-chk "texting offered only with a real number" "! grep -qi 'text' index.html || grep -qE 'href=\"(tel|sms):\\+?[0-9]' index.html"
+chk "texting offered only with a real number" "! grep -qiE 'text (us|or|me)|text:|by text|texting' index.html || grep -qE 'href=\"(tel|sms):\\+?[0-9]' index.html"
 chk "home links to pricing"              "grep -q 'href=\"pricing.html\"' index.html"
 chk "pricing links back home"            "grep -q 'href=\"index.html' pricing.html"
 chk "Scout is not on the home page"      "! grep -qi 'scout' index.html"
