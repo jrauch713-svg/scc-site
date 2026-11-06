@@ -50,5 +50,10 @@ chk "photo gets an estimate, the firm quote comes in person" "grep -q 'firm quot
 chk "service area names The Woodlands where the area is stated (Josh, 2026-11-06)" "grep -q 'The Woodlands' contact.html && grep -q 'The Woodlands' about.html && grep -q 'The Woodlands' index.html"
 chk "home and services descriptions name both areas" "grep '<meta name=\"description\"' index.html | grep -q 'The Woodlands' && grep '<meta name=\"description\"' services.html | grep -q 'The Woodlands'"
 chk "services and pricing titles say Houston (SEO audit 2026-11-06)" "grep -q '<title>[^<]*Houston' services.html && grep -q '<title>[^<]*Houston' pricing.html"
+chk "llms.txt: AI summary exists with the site's phone and email" "[[ -s llms.txt ]] && head -1 llms.txt | grep -qx '# The Spring Cleaning Crew' && grep -q '(832) 356-7571' llms.txt && grep -q 'quotes@thespringcleaningcrew.com' llms.txt"
+chk "llms.txt: every price it states is on the live pages" "for p in \$(grep -oE '\\\$[0-9]+' llms.txt | sort -u); do grep -qF \"\$p\" pricing.html services.html || { echo \"missing \$p\"; exit 1; }; done"
+chk "llms.txt: every service link points at a real anchor" "for a in \$(grep -oE 'services.html#[a-z-]+' llms.txt | cut -d# -f2 | sort -u); do grep -q \"id=\\\"\$a\\\"\" services.html || exit 1; done"
+chk "llms.txt: no unproven claims (licensed, insured, years, ratings)" "! grep -iwE 'licensed|insured|bonded|years of experience|rated|stars' llms.txt | grep -viE \"don't state|none are claimed\""
+chk "llms.txt stays invisible: no page links to it" "! grep -q 'llms.txt' $PAGES"
 echo "passed $pass, failed $fail"
 [[ $fail -eq 0 ]]
