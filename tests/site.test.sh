@@ -24,6 +24,7 @@ chk "badge image the home page uses is in the repo" "grep -q 'src=\"badge.webp\"
 chk "badge has a text description"       "grep -qE 'class=\"badge\"[^>]* alt=\"[^\"]{20,}\"' index.html"
 chk "pricing links back home"            "grep -q 'href=\"index.html' pricing.html"
 chk "Scout is not on the home page"      "! grep -qi 'scout' index.html"
+chk "no receipt promise (Josh, 2026-11-06)" "! grep -qi 'receipt' index.html pricing.html"
 chk "photo gets an estimate, the firm quote comes in person" "grep -q 'firm quote' index.html && ! grep -qi 'straight price' index.html"
 echo "passed $pass, failed $fail"
 [[ $fail -eq 0 ]]
