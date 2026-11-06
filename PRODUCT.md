@@ -55,9 +55,10 @@ Usable items are resold or rehomed rather than dumped.
 - Picking up free-listed items
 - "We sell it for you"
 
-**Unconfirmed, and must not appear on the site until confirmed:**
-- **Curbside carry-out for City heavy-trash day.** This needs a check with Houston 311.
-- **Goodwill donation runs with the receipt in the customer's name.** This needs a check with Goodwill.
+**Confirmed by Josh 2026-11-06 and back on the services page:**
+- **Curbside carry-out for City heavy-trash day.** Houston 311 confirmed. Priced at the muscle-only rate ($40 an hour, 2-hour minimum).
+- **Goodwill donation runs with the receipt in the customer's name.** Goodwill confirmed. Free estimate from a photo.
+- **Special-item handling charge:** "Facility fee at cost, plus $15 each" on the pricing page. Josh: "Keep it" (2026-11-06).
 
 **Prices, approved by Josh 2026-10-29:**
 
