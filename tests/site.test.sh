@@ -45,5 +45,8 @@ chk "pricing links back home"            "grep -q 'href=\"index.html' pricing.ht
 chk "Scout is not on the home page"      "! grep -qi 'scout' index.html"
 chk "no receipt promise (Josh, 2026-11-06)" "! grep -qi 'receipt' $PAGES"
 chk "photo gets an estimate, the firm quote comes in person" "grep -q 'firm quote' index.html && ! grep -qi 'straight price' index.html"
+chk "service area names The Woodlands where the area is stated (Josh, 2026-11-06)" "grep -q 'The Woodlands' contact.html && grep -q 'The Woodlands' about.html && grep -q 'The Woodlands' index.html"
+chk "home and services descriptions name both areas" "grep '<meta name=\"description\"' index.html | grep -q 'The Woodlands' && grep '<meta name=\"description\"' services.html | grep -q 'The Woodlands'"
+chk "services and pricing titles say Houston (SEO audit 2026-11-06)" "grep -q '<title>[^<]*Houston' services.html && grep -q '<title>[^<]*Houston' pricing.html"
 echo "passed $pass, failed $fail"
 [[ $fail -eq 0 ]]
