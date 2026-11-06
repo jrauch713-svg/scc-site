@@ -71,13 +71,13 @@ Usable items are resold or rehomed rather than dumped.
 | Muscle-only help | $40/hour, 2-hour minimum |
 | We sell it for you | Customer keeps 50% |
 
-**Service area:** anywhere in Houston.
+**Service area:** all of Houston and The Woodlands (Josh, 2026-11-06).
 
 **Hours:** flexible, when needed.
 
 **Contact:**
 - (832) 356-7571, a Google Voice number for calls and texts
-- thespringcleaningcrew@gmail.com
+- quotes@thespringcleaningcrew.com (routed to the business Gmail)
 - Domain: thespringcleaningcrew.com
 
 **Stack and hosting:**
