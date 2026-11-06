@@ -5,8 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>The Spring Cleaning Crew: Houston junk removal</title>
 <meta name="description" content="Junk removal anywhere in Houston: haul-aways, garage and attic clear-outs, and muscle-only help. Text or email a photo for a free estimate.">
+<link rel="canonical" href="https://thespringcleaningcrew.com/">
 <meta property="og:title" content="The Spring Cleaning Crew: Houston junk removal">
-<meta property="og:description" content="Junk hauling and heavy lifting anywhere in Houston. Text a photo to (832) 356-7571 for a free estimate.">
+<meta property="og:description" content="Junk removal anywhere in Houston: haul-aways, garage and attic clear-outs, and muscle-only help. Text or email a photo for a free estimate.">
 <meta property="og:image" content="https://thespringcleaningcrew.com/badge.webp">
 <meta property="og:url" content="https://thespringcleaningcrew.com/">
 <meta property="og:type" content="website">
@@ -28,7 +29,15 @@ h2{font-size:23px;line-height:1.2}
 h3{font-size:18px;line-height:1.25}
 p{margin:0}
 header.band{background:var(--rust);color:var(--paper);padding-block:12px}
-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px}
+header.band{padding-block:10px 4px}
+header .top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.nav{display:flex;flex-wrap:wrap;gap:0 4px;margin-inline:-10px}
+.nav a{color:var(--paper);font-weight:700;font-size:16px;text-decoration:none;padding:12px 10px;border-bottom:3px solid transparent}
+.nav a.on{border-bottom-color:var(--star)}
+.nav a:hover{border-bottom-color:var(--cream-2)}
+.foot-nav{display:flex;flex-wrap:wrap;gap:0 4px;margin:10px -10px 0}
+.foot-nav a{padding:10px;font-size:15px}
+.foot-nav a.on{color:var(--star)}
 header .name{font-weight:700;font-size:17px;line-height:1.15;color:var(--paper);text-decoration:none}
 header .phone{color:var(--paper);font-weight:700;font-size:16px;padding-block:10px;white-space:nowrap}
 .cta{display:flex;align-items:center;justify-content:center;min-height:54px;margin-top:6px;background:var(--rust);color:var(--paper);border-radius:6px;font-weight:700;font-size:18px;text-decoration:none;box-shadow:0 3px 0 var(--ink);text-align:center;padding-inline:12px}
@@ -56,17 +65,28 @@ footer .fine{font-size:15px;margin-top:10px}
 .hero{background:var(--cream);padding-block:22px 30px}
 .hero .wrap{display:grid;gap:14px}
 .badge{display:block;width:100%;max-width:380px;margin:0 auto 4px;height:auto}
-.story{padding-block:30px 34px}
-.story .wrap{display:grid;gap:26px}
-.why{display:grid;gap:12px}
-.pledge{font-weight:700;border-left:4px solid var(--rust);padding-left:12px}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:14px;counter-reset:step}
+.steps li{display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:start;counter-increment:step}
+.steps li::before{content:counter(step);display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:var(--rust);color:var(--paper);font-weight:700}
+.steps b{display:block}
+.links{display:grid;gap:10px}
+.links a{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 16px;border:2px solid var(--rust);border-radius:6px;font-weight:700;text-decoration:none;color:var(--ink);background:var(--paper)}
+.links a span{color:var(--rust)}
 </style>
 </head>
 <body>
 
 <header class="band"><div class="wrap">
+<div class="top">
 <a class="name" href="index.html">The Spring<br>Cleaning Crew</a>
 <a class="phone" href="tel:+18323567571">(832) 356-7571</a>
+</div>
+<nav class="nav" aria-label="Main">
+<a href="services.html">Services</a>
+<a href="pricing.html">Pricing</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</nav>
 </div></header>
 
 <main>
@@ -78,46 +98,52 @@ footer .fine{font-size:15px;margin-top:10px}
 <p class="small">Rather talk? <a class="tap" href="tel:+18323567571">Call the same number.</a> Or email <a class="tap" href="mailto:quotes@thespringcleaningcrew.com">quotes@thespringcleaningcrew.com</a></p>
 </div></section>
 
-<section class="story band"><div class="wrap">
-<div class="why">
-<h2>Hey, I'm Josh.</h2>
-<p>I'm new to running a business. What I'm not new to is solving other people's problems. Let me solve your trash, junk or general clutter issues in a way that leaves you satisfied, and able to tackle whatever else weighs on your day.</p>
-</div>
-<div class="why">
-<h2>Why I say "we appreciate your business"</h2>
-<p>Not long ago I was having a rough day. My phone was dead, I couldn't get to my bank, and I probably looked like I had nowhere to go. I tried three places. The smallest one, a family-owned food store, was the only one that helped without treating me like a bother.</p>
-<p>On my way out I saw their sign: "We appreciate your business." Plenty of places say it. That store meant it. They bridged the gap between platitude and attitude.</p>
-<p class="pledge">That's how I want to run this. No matter how big or small your job is, or what kind of day you're having, we appreciate your business, and we'll show it, so you know it.</p>
-</div>
+<section class="plain band"><div class="wrap">
+<h2>How it works</h2>
+<ol class="steps">
+<li><span><b>Send a photo</b>Text or email a picture of what needs to go, and your ZIP code.</span></li>
+<li><span><b>Get a free estimate</b>A ballpark price from your photo. Free, no strings.</span></li>
+<li><span><b>Get your firm quote</b>We see it in person and give you a firm price. You say yes before we lift a thing.</span></li>
+<li><span><b>We do the heavy lifting</b>At a time that works for you. Usable items get a new home first.</span></li>
+</ol>
 </div></section>
 
 <section class="prices band"><div class="wrap">
-<h2>Prices</h2>
-<p class="small">Starting prices for haul-away. The photo gets you an estimate; the firm quote comes in person.</p>
-<div class="table">
-<div class="row"><span>A few items</span><b>$99</b></div>
-<div class="row"><span>Small load</span><b>$175</b></div>
-<div class="row"><span>Half load</span><b>$325</b></div>
-<div class="row"><span>Full load</span><b>$550</b></div>
+<h2>Prices start at $99</h2>
+<p class="small">Haul-away is priced by how much space your stuff takes up: a few items, a small load, a half load or a full load.</p>
+<p class="small"><a class="tap" href="pricing.html">See all prices and extra-fee items</a></p>
+</div></section>
+
+<section class="plain band cream"><div class="wrap">
+<h2>Small and odd jobs welcome</h2>
+<div class="links">
+<a href="services.html#haul-away">Junk haul-away <span>→</span></a>
+<a href="services.html#clear-outs">Garage and attic clear-outs <span>→</span></a>
+<a href="services.html#muscle">Muscle-only help <span>→</span></a>
+<a href="services.html#free-items">Free-item pickup <span>→</span></a>
+<a href="services.html#sell">We sell it for you <span>→</span></a>
 </div>
-<p class="small"><a class="tap" href="pricing.html">See full pricing and extra-fee items</a></p>
 </div></section>
 
 <section class="plain band"><div class="wrap">
-<h2>Other things we do</h2>
-<p><strong>Muscle only.</strong> You've got the truck or dumpster, we bring the arms. $40 an hour, 2-hour minimum.</p>
-<p><strong>Listed it for free?</strong> Send us the listing and we'll come get it, so you're not waiting on strangers who never show.</p>
-<p><strong>Worth selling?</strong> We'll photograph it, list it and sell it. You keep 50% of each sale.</p>
-<p><strong>Garage or attic you can't walk into?</strong> We sort it together into keep, sell, donate and junk. Priced by the load.</p>
+<h2>Hey, I'm Josh.</h2>
+<p>I'm new to running a business. What I'm not new to is solving other people's problems. We appreciate your business, and we'll show it, so you know it.</p>
+<p class="small"><a class="tap" href="about.html">Read why I started The Spring Cleaning Crew</a></p>
 </div></section>
 </main>
 
 <footer class="band"><div class="wrap">
-<p>Hours are flexible. We work around your schedule.</p>
-<p>Thanks for giving a local business a shot.</p>
 <p class="num">(832) 356-7571</p>
-<p>Or email <a class="tap" href="mailto:quotes@thespringcleaningcrew.com">quotes@thespringcleaningcrew.com</a></p>
+<p>Text a photo or call. Or email <a class="tap" href="mailto:quotes@thespringcleaningcrew.com">quotes@thespringcleaningcrew.com</a></p>
 <a class="cta" href="sms:+18323567571">Text a photo for a free estimate</a>
+<nav class="foot-nav" aria-label="Footer">
+<a href="index.html" class="on" aria-current="page">Home</a>
+<a href="services.html">Services</a>
+<a href="pricing.html">Pricing</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a href="privacy.html">Privacy</a>
+</nav>
 <p class="fine">© 2026 The Spring Cleaning Crew · Houston, Texas</p>
 </div></footer>
 </body>
