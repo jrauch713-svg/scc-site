@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Pricing: The Spring Cleaning Crew</title>
 <meta name="description" content="Junk removal prices in Houston: haul-away by the load from $99, extra-fee items, muscle-only help at $40 an hour. Text or email a photo for a free estimate.">
+<link rel="canonical" href="https://thespringcleaningcrew.com/pricing.html">
+<meta property="og:title" content="Pricing: The Spring Cleaning Crew">
+<meta property="og:description" content="Junk removal prices in Houston: haul-away by the load from $99, extra-fee items, muscle-only help at $40 an hour. Text or email a photo for a free estimate.">
+<meta property="og:image" content="https://thespringcleaningcrew.com/badge.webp">
+<meta property="og:url" content="https://thespringcleaningcrew.com/pricing.html">
+<meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%238B3A14'/%3E%3Cpath d='M10 44V30h7v-6h6v20h4V16h8v28h4V24h7v8h8v12z' fill='%23F5E7DA'/%3E%3Crect x='8' y='47' width='48' height='7' rx='1' fill='%23F6D27A'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&amp;display=swap" rel="stylesheet">
@@ -23,7 +29,15 @@ h2{font-size:23px;line-height:1.2}
 h3{font-size:18px;line-height:1.25}
 p{margin:0}
 header.band{background:var(--rust);color:var(--paper);padding-block:12px}
-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px}
+header.band{padding-block:10px 4px}
+header .top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.nav{display:flex;flex-wrap:wrap;gap:0 4px;margin-inline:-10px}
+.nav a{color:var(--paper);font-weight:700;font-size:16px;text-decoration:none;padding:12px 10px;border-bottom:3px solid transparent}
+.nav a.on{border-bottom-color:var(--star)}
+.nav a:hover{border-bottom-color:var(--cream-2)}
+.foot-nav{display:flex;flex-wrap:wrap;gap:0 4px;margin:10px -10px 0}
+.foot-nav a{padding:10px;font-size:15px}
+.foot-nav a.on{color:var(--star)}
 header .name{font-weight:700;font-size:17px;line-height:1.15;color:var(--paper);text-decoration:none}
 header .phone{color:var(--paper);font-weight:700;font-size:16px;padding-block:10px;white-space:nowrap}
 .cta{display:flex;align-items:center;justify-content:center;min-height:54px;margin-top:6px;background:var(--rust);color:var(--paper);border-radius:6px;font-weight:700;font-size:18px;text-decoration:none;box-shadow:0 3px 0 var(--ink);text-align:center;padding-inline:12px}
@@ -48,8 +62,8 @@ footer .cta{margin-top:14px;background:var(--glow);color:var(--ink)}
 footer .num{font-weight:700;color:var(--star);font-size:19px}
 footer .fine{font-size:15px;margin-top:10px}
 .tap{display:inline-block;padding-block:10px}
-.top{background:var(--cream);padding-block:26px 28px}
-.top .wrap{display:grid;gap:12px}
+.top-band{background:var(--cream);padding-block:26px 28px}
+.top-band .wrap{display:grid;gap:12px}
 .fees{display:grid;gap:0;border-top:3px solid var(--rust)}
 .fee{display:grid;gap:4px;padding-block:14px;border-bottom:1px solid var(--line)}
 .fee:last-child{border-bottom:3px solid var(--rust)}
@@ -60,15 +74,22 @@ footer .fine{font-size:15px;margin-top:10px}
 <body>
 
 <header class="band"><div class="wrap">
+<div class="top">
 <a class="name" href="index.html">The Spring<br>Cleaning Crew</a>
 <a class="phone" href="tel:+18323567571">(832) 356-7571</a>
+</div>
+<nav class="nav" aria-label="Main">
+<a href="services.html">Services</a>
+<a href="pricing.html" class="on" aria-current="page">Pricing</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</nav>
 </div></header>
 
 <main>
-<section class="top band"><div class="wrap">
+<section class="top-band band"><div class="wrap">
 <h1>Pricing</h1>
 <p>You pay for how much space your stuff takes up. Send a photo for a free estimate, then get a firm quote once we see it in person. No surprises.</p>
-<p class="small"><a class="tap" href="index.html">Back to the home page</a></p>
 </div></section>
 
 <section class="prices band"><div class="wrap">
@@ -101,14 +122,22 @@ footer .fine{font-size:15px;margin-top:10px}
 <p><strong>Garage and attic clear-outs.</strong> We sort it with you, then haul the junk away at the load prices above.</p>
 <p><strong>We sell it for you.</strong> We photograph, list and sell it. You keep 50% of each sale, with nothing to pay up front.</p>
 <p><strong>We pick up free items.</strong> Listed it for free? Send us the listing and we'll come get it.</p>
+<p class="small"><a class="tap" href="services.html">More about each service</a></p>
 </div></section>
 </main>
 
 <footer class="band"><div class="wrap">
-<p>Not sure which size you are? Send a photo.</p>
 <p class="num">(832) 356-7571</p>
-<p>Or email <a class="tap" href="mailto:quotes@thespringcleaningcrew.com">quotes@thespringcleaningcrew.com</a></p>
+<p>Text a photo or call. Or email <a class="tap" href="mailto:quotes@thespringcleaningcrew.com">quotes@thespringcleaningcrew.com</a></p>
 <a class="cta" href="sms:+18323567571">Text a photo for a free estimate</a>
+<nav class="foot-nav" aria-label="Footer">
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="pricing.html" class="on" aria-current="page">Pricing</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a href="privacy.html">Privacy</a>
+</nav>
 <p class="fine">© 2026 The Spring Cleaning Crew · Houston, Texas</p>
 </div></footer>
 </body>
