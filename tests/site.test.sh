@@ -12,7 +12,7 @@ for F in $PAGES; do
   chk "$F has viewport for phones"       "grep -q 'name=\"viewport\"' $F"
   chk "$F has a title"                   "grep -q '<title>.*Spring Cleaning Crew' $F"
   chk "$F has no bracketed placeholders" "! grep -qE '\\[[^]]{1,60}\\]' $F"
-  chk "$F has no scripts or trackers"    "! grep -qi '<script' $F"
+  chk "$F has no scripts or trackers (structured data only, Josh 2026-11-06)" "! grep -oi '<script[^>]*>' $F | grep -qvx '<script type=\"application/ld+json\">'"
   chk "$F has no design-tool leftovers"  "! grep -qE '\\{\\{|dc\\.html|support\\.js|<x-dc|<helmet' $F"
   chk "$F makes no unproven claims"      "! grep -qiE 'licensed|insured|same[- ]day|5 stars|[0-9.]+/5|reviews from' $F"
   chk "$F offers a free estimate"        "grep -qi 'free estimate' $F"
@@ -55,5 +55,8 @@ chk "llms.txt: every price it states is on the live pages" "for p in \$(grep -oE
 chk "llms.txt: every service link points at a real anchor" "for a in \$(grep -oE 'services.html#[a-z-]+' llms.txt | cut -d# -f2 | sort -u); do grep -q \"id=\\\"\$a\\\"\" services.html || exit 1; done"
 chk "llms.txt: no unproven claims (licensed, insured, years, ratings)" "! grep -iwE 'licensed|insured|bonded|years of experience|rated|stars' llms.txt | grep -viE \"don't state|none are claimed\""
 chk "llms.txt stays invisible: no page links to it" "! grep -q 'llms.txt' $PAGES"
+chk "home structured data parses and matches the site (phone, both areas, no street address)" "python3 -I -c 'import json,re,sys; s=open(\"index.html\").read(); b=re.findall(r\"<script type=\\\"application/ld\\+json\\\">(.*?)</script>\", s, re.S); assert len(b)==1; d=json.loads(b[0]); assert d[\"telephone\"]==\"+1-832-356-7571\" and d[\"email\"]==\"quotes@thespringcleaningcrew.com\"; a=json.dumps(d[\"areaServed\"]); assert \"Houston\" in a and \"The Woodlands\" in a; assert \"streetAddress\" not in b[0] and \"aggregateRating\" not in b[0] and \"review\" not in b[0].lower()'"
+chk "structured data appears only on the home page" "[[ \$(grep -l 'application/ld+json' $PAGES | tr '\n' ' ') == 'index.html ' ]]"
+chk "IndexNow: exactly one key file, named for the key it holds" "f=\$(ls | grep -E '^[0-9a-f]{32}\\.txt\$'); [[ \$(echo \"\$f\" | grep -c .) -eq 1 ]] && [[ \"\$(cat \$f)\" == \"\${f%.txt}\" ]]"
 echo "passed $pass, failed $fail"
 [[ $fail -eq 0 ]]
