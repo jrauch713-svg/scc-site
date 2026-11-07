@@ -72,7 +72,7 @@ Usable items are resold or rehomed rather than dumped.
 | Muscle-only help | $40/hour, 2-hour minimum |
 | We sell it for you | Customer keeps 50% |
 
-**Service area:** all of Houston and The Woodlands (Josh, 2026-11-06).
+**Service area:** Greater Houston: Waller to Sugar Land, Pearland to Crosby, and up to The Woodlands (Josh, 2026-11-07; was Houston and The Woodlands, 2026-11-06).
 
 **Hours:** flexible, when needed.
 
