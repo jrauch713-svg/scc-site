@@ -77,7 +77,7 @@ Usable items are resold or rehomed rather than dumped.
 **Hours:** flexible, when needed.
 
 **Contact:**
-- (832) 356-7571, a Google Voice number for calls and texts
+- (832) 476-1941, the Quo business number for calls and texts (Josh 2026-11-07; the old Google Voice number 356-7571 is retired from the site)
 - quotes@thespringcleaningcrew.com (routed to the business Gmail)
 - Domain: thespringcleaningcrew.com
 
