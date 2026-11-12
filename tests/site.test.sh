@@ -60,7 +60,8 @@ chk "llms.txt stays invisible: no page links to it" "! grep -q 'llms.txt' $PAGES
 chk "home structured data parses and matches the site (phone, both areas, no street address)" "python3 -I -c 'import json,re,sys; s=open(\"index.html\").read(); b=re.findall(r\"<script type=\\\"application/ld\\+json\\\">(.*?)</script>\", s, re.S); assert len(b)==1; d=json.loads(b[0]); assert d[\"telephone\"]==\"+1-832-476-1941\" and d[\"email\"]==\"quotes@thespringcleaningcrew.com\"; a=json.dumps(d[\"areaServed\"]); assert \"Houston\" in a and \"The Woodlands\" in a; assert \"streetAddress\" not in b[0] and \"aggregateRating\" not in b[0] and \"review\" not in b[0].lower()'"
 chk "no page links to index.html (home is /)" "! grep -q 'href=\"index.html' $PAGES"
 chk "each page's canonical URL is its sitemap URL" "for P in $PAGES; do u=https://thespringcleaningcrew.com/\${P/index.html/}; grep -q \"rel=\\\"canonical\\\" href=\\\"\$u\\\"\" \$P && grep -q \"<loc>\$u</loc>\" sitemap.xml || { echo \"canonical mismatch \$P\"; exit 1; }; done"
-chk "structured data appears only on the home page" "[[ \$(grep -l 'application/ld+json' $PAGES | tr '\n' ' ') == 'index.html ' ]]"
+chk "structured data appears only on the home and pricing pages (FAQ, Josh 2026-11-11)" "[[ \$(grep -l 'application/ld+json' $PAGES | tr '\n' ' ') == 'index.html pricing.html ' ]]"
+chk "pricing FAQ: JSON-LD questions and answers match the visible text, no unproven claims" "python3 -I tests/check_faq.py"
 chk "IndexNow: exactly one key file, named for the key it holds" "f=\$(ls | grep -E '^[0-9a-f]{32}\\.txt\$'); [[ \$(echo \"\$f\" | grep -c .) -eq 1 ]] && [[ \"\$(cat \$f)\" == \"\${f%.txt}\" ]]"
 echo "passed $pass, failed $fail"
 [[ $fail -eq 0 ]]
