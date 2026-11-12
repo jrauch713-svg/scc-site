@@ -19,6 +19,7 @@ for F in $PAGES; do
   chk "$F menu links every main page"    "for P in services pricing about contact; do grep -q \"href=\\\"\$P.html\\\"\" $F || exit 1; done"
   chk "$F footer links home and privacy" "grep -q 'href=\"/\"' $F && grep -q 'href=\"privacy.html\"' $F"
   chk "$F marks itself as the current page" "[[ $F == index.html ]] || grep -q \"href=\\\"$F\\\" class=\\\"on\\\" aria-current=\\\"page\\\"\" $F"
+  chk "$F text bar comes first: first sms/tel link is the text link, with its label" "[[ \$(grep -oE 'href=\"(sms|tel):[^\"]*' $F | head -1) == 'href=\"sms:+18324761941' ]] && grep -q 'class=\"getbar\"' $F && grep -q '>Text a photo for a free estimate</a><a class=\"gb-call\"' $F"
   chk "$F shows the business email"      "grep -q 'mailto:quotes@thespringcleaningcrew.com' $F"
   chk "$F has its own description"       "grep -q '<meta name=\"description\"' $F"
 done

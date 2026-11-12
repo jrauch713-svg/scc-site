@@ -63,6 +63,14 @@ footer .cta{margin-top:14px;background:var(--glow);color:var(--ink)}
 footer .num{font-weight:700;color:var(--star);font-size:19px}
 footer .fine{font-size:15px;margin-top:10px}
 .tap{display:inline-block;padding-block:10px}
+.getbar{display:none}
+@media (max-width:760px){
+.getbar{position:fixed;left:0;right:0;bottom:0;z-index:10;display:flex;gap:8px;padding:8px max(12px,env(safe-area-inset-right,0px)) calc(8px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px));background:var(--ink)}
+.getbar a{display:flex;align-items:center;justify-content:center;min-height:52px;border-radius:6px;font-weight:700;font-size:17px;line-height:1.2;text-decoration:none;text-align:center}
+.getbar .gb-text{flex:1;background:var(--glow);color:var(--ink)}
+.getbar .gb-call{flex:0 0 84px;background:var(--paper);color:var(--rust)}
+footer.band{padding-bottom:calc(34px + 68px + env(safe-area-inset-bottom,0px))}
+}
 .top-band{background:var(--cream);padding-block:26px 28px}
 .top-band .wrap{display:grid;gap:12px}
 .fees{display:grid;gap:0;border-top:3px solid var(--rust)}
@@ -73,6 +81,7 @@ footer .fine{font-size:15px;margin-top:10px}
 </style>
 </head>
 <body>
+<div class="getbar"><a class="gb-text" href="sms:+18324761941">Text a photo for a free estimate</a><a class="gb-call" href="tel:+18324761941" aria-label="Call (832) 476-1941">Call</a></div>
 
 <header class="band"><div class="wrap">
 <div class="top">
