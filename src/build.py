@@ -9,7 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "src"
 NAV = [("services.html", "Services"), ("pricing.html", "Pricing"), ("about.html", "About"), ("contact.html", "Contact")]
-FOOT = [("index.html", "Home")] + NAV + [("privacy.html", "Privacy")]
+FOOT = [("/", "Home")] + NAV + [("privacy.html", "Privacy")]
 FAVICON_SVG = ("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='#8B3A14'/>"
                "<path d='M10 44V30h7v-6h6v20h4V16h8v28h4V24h7v8h8v12z' fill='#F5E7DA'/>"
                "<rect x='8' y='47' width='48' height='7' rx='1' fill='#F6D27A'/></svg>")
@@ -17,6 +17,7 @@ FAVICON = '<link rel="icon" href="data:image/svg+xml,' + urllib.parse.quote(FAVI
 
 
 def links(items, current):
+    current = "/" if current == "index.html" else current
     return "\n".join(f'<a href="{href}"' + (' class="on" aria-current="page"' if href == current else "") + f">{label}</a>"
                      for href, label in items)
 
