@@ -31,7 +31,9 @@ chk "sitemap lists every page"           "for P in $PAGES; do grep -q \"thesprin
 chk "robots.txt points to the sitemap"   "grep -qx 'Sitemap: https://thespringcleaningcrew.com/sitemap.xml' robots.txt"
 chk "every image a page uses is in the repo" "for s in \$(grep -ho 'src=\"[^\"]*\"' $PAGES | sed 's/src=\"//;s/\"//' | sort -u); do [[ -s \$s ]] || exit 1; done"
 chk "every image has a real description"  "! grep -hoE '<img [^>]*>' $PAGES | grep -vqE 'alt=\"[^\"]{20,}\"'"
-chk "illustrations are labeled as illustrations, not job photos" "! grep -hoE '<img [^>]*images/[^>]*>' $PAGES | grep -vq 'alt=\"Illustration: '"
+REAL_PHOTOS="images/story-store.webp"   # real photos Josh took, each added by name (Josh 2026-11-15 CT: the store from the About story)
+chk "illustrations are labeled as illustrations, not job photos" "! grep -hoE '<img [^>]*images/[^>]*>' $PAGES | grep -vE 'src=\"($(echo $REAL_PHOTOS | tr ' ' '|'))\"' | grep -vq 'alt=\"Illustration: '"
+chk "each real photo is labeled a photo, and nothing else is" "(for p in $REAL_PHOTOS; do grep -hoE \"<img [^>]*src=\\\"\$p\\\"[^>]*>\" $PAGES | grep -q 'alt=\"Photo: ' || exit 1; done) && ! grep -hoE '<img [^>]*alt=\"Photo: [^>]*>' $PAGES | grep -vqE 'src=\"($(echo $REAL_PHOTOS | tr ' ' '|'))\"'"
 chk "each image is under 150 KB"         "for f in badge.webp images/*.webp; do [[ \$(wc -c < \$f) -lt 150000 ]] || exit 1; done"
 chk "garage before/after pair is on the clear-outs service" "grep -A4 'id=\"clear-outs\"' services.html | grep -q 'images/garage-before.webp' && grep -A6 'id=\"clear-outs\"' services.html | grep -q 'images/garage-after.webp'"
 chk "realistic before/after carries a visible Illustration label" "grep -A8 'id=\"clear-outs\"' services.html | grep -qE '<figcaption[^>]*>Illustration'"
