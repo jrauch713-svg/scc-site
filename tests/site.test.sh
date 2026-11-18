@@ -28,6 +28,7 @@ chk "pages are built from src/ (no hand edits)" "python3 -I src/build.py --check
 chk "about page tells Josh's story"      "grep -q 'appreciate your business' about.html && grep -q \"Hey, I'm Josh\" about.html"
 chk "privacy page says no cookies or tracking" "grep -qi 'no cookies' privacy.html && ! grep -qi '<script' privacy.html"
 chk "sitemap lists every page"           "for P in $PAGES; do grep -q \"thespringcleaningcrew.com/\${P/index.html/}<\" sitemap.xml || exit 1; done"
+chk "every sitemap page has a real last-updated date, not in the future" "[[ \$(grep -c '<url>' sitemap.xml) -eq \$(grep -cE '</loc><lastmod>20[0-9]{2}-[01][0-9]-[0-3][0-9]</lastmod></url>' sitemap.xml) ]] && python3 -I -c 'import re,datetime,sys; d=re.findall(r\"<lastmod>([^<]+)</lastmod>\", open(\"sitemap.xml\").read()); sys.exit(0 if d and all(datetime.date.fromisoformat(x)<=datetime.date.today() for x in d) else 1)'"   # Josh 2026-11-18 CT: help Google recrawl Services
 chk "robots.txt points to the sitemap"   "grep -qx 'Sitemap: https://thespringcleaningcrew.com/sitemap.xml' robots.txt"
 chk "every image a page uses is in the repo" "for s in \$(grep -ho 'src=\"[^\"]*\"' $PAGES | sed 's/src=\"//;s/\"//' | sort -u); do [[ -s \$s ]] || exit 1; done"
 chk "every image has a real description"  "! grep -hoE '<img [^>]*>' $PAGES | grep -vqE 'alt=\"[^\"]{20,}\"'"
