@@ -37,6 +37,8 @@ The site makes two claims:
 
 The business is The Spring Cleaning Crew, a junk removal and hauling service in Houston, TX. Josh, the owner, does the physical work and runs the business from his phone between jobs.
 
+**Experience (Josh, 2026-11-19 CT):** "I've been organizing and helping clean out hoarders homes for 4 years and worked on 3 houses for indepth cleanings." Site wording: "For the past four years I've helped organize and clear out homes affected by hoarding, including three in-depth whole-house cleanings." No other year counts or credentials.
+
 How a customer gets a price:
 
 1. The customer sends a photo.
